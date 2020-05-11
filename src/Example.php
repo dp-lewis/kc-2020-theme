@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+namespace Kc2020;
 final class Example
 {
     public function __construct(int $startingNumber)
