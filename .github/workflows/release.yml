@@ -19,4 +19,4 @@ jobs:
             cwd: "./kc-2020-theme"
             force: true
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
