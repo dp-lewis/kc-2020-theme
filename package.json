@@ -1,0 +1,26 @@
+{
+  "name": "kc-2020-theme",
+  "version": "1.0.0",
+  "description": "## TODO",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dp-lewis/kc-2020-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dp-lewis/kc-2020-theme/issues"
+  },
+  "homepage": "https://github.com/dp-lewis/kc-2020-theme#readme"
+}
