@@ -17,13 +17,14 @@ jobs:
     - name: Validate composer.json and composer.lock
       run: composer validate
 
-    - name: Install dependencies
+    - name: Install PHP dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Run PHP test suite
       run: composer run-script test
 
-    - name: Run JS test suite
+    - name: Install JS dependencies
       run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+   
+    - name: Run JS test suite
+      run: npm test
