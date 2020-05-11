@@ -7,16 +7,17 @@ jobs:
     release:
         runs-on: ubuntu-latest
         steps:
+        - name: Checkout repo
+            uses: actions/checkout@v2
         - name: Create a file
-          run: echo "Test file" > testfile.txt 
+            run: echo "Test file" > testfile.txt 
         - name: Commit test
-          uses: EndBug/add-and-commit@v4
-          with:
+            uses: EndBug/add-and-commit@v4
+            with:
             author_name: David Lewis
             author_email: mail@david-lewis.com
             message: "Automatic commit"
             add: "*.txt"
-            cwd: "./kc-2020-theme"
             force: true
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
