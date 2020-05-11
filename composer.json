@@ -1,4 +1,7 @@
 {
+    "name": "dp-lewis/kc-2020-theme",
+    "description": "PHP dependancies for KC Theme",
+    "license": "proprietary",
     "autoload": {
         "classmap": [
             "src/"
