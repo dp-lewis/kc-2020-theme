@@ -8,11 +8,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "test": "jest",
-    "build": "mkdir build && touch build/app.js",
+    "build": "webpack",
     "clean": "rm -r build"
   },
   "repository": {
