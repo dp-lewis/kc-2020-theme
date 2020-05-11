@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "mkdir build && touch build/app.js"
+    "build": "mkdir build && touch build/app.js",
+    "clean": "rm -r build"
   },
   "repository": {
     "type": "git",
