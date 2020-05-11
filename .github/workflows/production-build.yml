@@ -20,7 +20,7 @@ jobs:
             author_name: David Lewis
             author_email: mail@david-lewis.com
             message: "Add vendor files"
-            add: "vendor/* build/*"
+            add: "."
             force: true
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
