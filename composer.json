@@ -14,6 +14,6 @@
         "test": "phpunit tests"
     },
     "require": {
-        "twig/twig": "^3.0"
+        "timber/timber": "^1.15"
     }
 }
