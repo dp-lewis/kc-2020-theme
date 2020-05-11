@@ -45,7 +45,7 @@ class SiteSetup extends \Timber\Site {
 	}
 
 	public function add_to_context( $context ) {
-		$context['menu']  = new \Timber\Menu();
+		$context['menu']  = new \Timber\Menu('Main Menu');
 		return $context;
 	}
 
