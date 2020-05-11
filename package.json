@@ -4,15 +4,15 @@
   "description": "## TODO",
   "main": "index.js",
   "directories": {
-    "test": "tests",
-    "build": "mkdir build && touch build/app.js"
+    "test": "tests"
   },
   "dependencies": {},
   "devDependencies": {
     "jest": "^26.0.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "mkdir build && touch build/app.js"
   },
   "repository": {
     "type": "git",
