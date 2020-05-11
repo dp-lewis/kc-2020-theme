@@ -16,6 +16,7 @@ jobs:
             author_email: mail@david-lewis.com
             message: "Automatic commit"
             add: "*.txt"
+            cwd: "./kc-2020-theme"
             force: true
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
