@@ -4,7 +4,8 @@
   "description": "## TODO",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "tests",
+    "build": "mkdir build && touch build/app.js"
   },
   "dependencies": {},
   "devDependencies": {
