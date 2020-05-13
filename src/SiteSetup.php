@@ -60,7 +60,6 @@ class SiteSetup extends \Timber\Site
     public function addToContext($context)
     {
         $context['menu']  = new \Timber\Menu('Site Navigation');
-        var_dump($context['menu']->items);
         return $context;
     }
 
