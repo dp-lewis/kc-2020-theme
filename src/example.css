@@ -3,3 +3,20 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.site-navigation .megamenu {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    transition: opacity 3s linear;
+}
+  
+.site-navigation li:hover > .megamenu,
+.site-navigation li:focus-within > .megamenu,
+.site-navigation li .megamenu:hover,
+.site-navigation li .megamenu:focus {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
