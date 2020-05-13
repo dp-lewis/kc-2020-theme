@@ -1,6 +1,5 @@
 <?php
 require_once( __DIR__ . '/vendor/autoload.php' );
-
 /*
     Timer is used to manage server side template rendering
 */

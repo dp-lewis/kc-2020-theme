@@ -5,13 +5,13 @@ class SiteSetup extends \Timber\Site
 {
     public function __construct()
     {
+        parent::__construct();
         add_action('after_setup_theme', array($this, 'themeSupports'));
         add_filter('timber/context', array($this, 'addToContext'));
         add_action('init', array($this, 'registerPostTypes'));
         add_action('init', array($this, 'registerTaxonomies'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
-
-        parent::__construct();
+        add_filter('timber/twig', array($this, 'addToTwig'));
     }
 
     public function enqueueStyles()
@@ -92,5 +92,14 @@ class SiteSetup extends \Timber\Site
         );
 
         add_theme_support('menus');
+    }
+
+    public function addToTwig($twig)
+    {
+         $twig->addFilter(new \Timber\Twig_Filter('pipetolist', function ($text) {
+             return \Kc2020\StringFormatting::convertPipeToList($text);
+         }));
+         
+        return $twig;
     }
 }

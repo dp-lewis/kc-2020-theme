@@ -9,11 +9,7 @@
     <aside class="p-10 bg-gray-100 w-2/5">
         {% for item in items|slice(3,10) %}
             <h3 class="font-bold">{{ item.title }}</h3>
-            {% for child in item.children %}
-            <ul>
-                <li class="text-sm">{{ child.title }}</li>
-            </ul>
-            {% endfor %}
+            {{item.description|pipetolist}}
         {% endfor %}
     </aside>
 </section>
