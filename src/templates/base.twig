@@ -4,7 +4,6 @@
 <head>
     <meta charset="{{ site.charset }}" />
     <meta name="description" content="{{ site.description }}">
-    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +12,29 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     {{function('wp_head')}}
 </head>
-<body>
-{% include "menu.twig" with {'items': menu.get_items} %}
+<body class="font-body">
+
+<nav class="flex items-center justify-between flex-wrap p-6">
+  <div class="block lg:hidden">
+    <button class="flex items-center px-3 py-2 border rounded border-black hover:text-white hover:border-white">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+    {% include "svg/logo.svg" %}
+  </div>
+
+  <div class="lg:order-last">
+    <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded border-black mt-4 lg:mt-0">Book Now</a>
+  </div>
+
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    {% include "menu.twig" with {'items': menu.get_items} %}
+  </div>
+</nav>
+
+
 
 {% block content %}
     Sorry, no content

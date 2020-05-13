@@ -10,6 +10,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "browser-sync": "^2.26.7",
+    "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
     "jest": "^26.0.1",
     "postcss": "^7.0.29",
@@ -21,7 +22,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack && postcss ./src/example.css -o ./build/main.css",
-    "dev": "browser-sync start --proxy 'kombicelebrations:8888' --files '*.css'"
+    "dev": "concurrently \"browser-sync start --proxy 'kombicelebrations:8888' -f '.'\" \"postcss ./src/example.css -o ./build/main.css\""
   },
   "repository": {
     "type": "git",

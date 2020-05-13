@@ -1,9 +1,10 @@
 {% if menu %}
-	<ul>
+
+	<ul class="text-sm lg:flex-grow">
 	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
+		<li class="block mt-4 lg:inline-block lg:mt-0 hover:text-black mr-4">
 			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
+			{% include "megamenu.twig" with {'items': item.children} %}
 		</li>
 	{% endfor %}
 	</ul>

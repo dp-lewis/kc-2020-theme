@@ -9,7 +9,14 @@ class SiteSetup extends \Timber\Site
         add_filter('timber/context', array( $this, 'addToContext' ));
         add_action('init', array( $this, 'registerPostTypes' ));
         add_action('init', array( $this, 'registerTaxonomies' ));
+        add_action('wp_enqueue_scripts',  array( $this, 'enqueueStyles' ));
+
         parent::__construct();
+    }
+
+    public function enqueueStyles() {
+        wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
+        wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css');
     }
 
     public function registerPostTypes()
@@ -51,7 +58,7 @@ class SiteSetup extends \Timber\Site
 
     public function addToContext($context)
     {
-        $context['menu']  = new \Timber\Menu('Main Menu');
+        $context['menu']  = new \Timber\Menu('Site Navigation');
         return $context;
     }
 

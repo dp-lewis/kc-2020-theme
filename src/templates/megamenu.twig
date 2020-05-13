@@ -1,0 +1,20 @@
+{% if items %}
+<section class="megamenu flex shadow-md absolute bg-white w-meganav">
+    <header class="hidden"><h2>Services</h2></header>
+    <ul class="p-10 w-3/5">
+        {% for item in items|slice(0,3) %}
+        <li><a href="#" class="mb-2 flex mb-5"><div class="w-1/4 pr-6 pt-1">{{ item.meta('kc2020_menu_icon') }}</div><div><strong class="block">{{ item.title }}</strong> <span class="block text-sm leading-none">{{ item.description }}</span></div></a></li>
+        {% endfor %}
+    </ul>
+    <aside class="p-10 bg-gray-100 w-2/5">
+        {% for item in items|slice(3,10) %}
+            <h3 class="font-bold">{{ item.title }}</h3>
+            {% for child in item.children %}
+            <ul>
+                <li class="text-sm">{{ child.title }}</li>
+            </ul>
+            {% endfor %}
+        {% endfor %}
+    </aside>
+</section>
+{% endif %}
