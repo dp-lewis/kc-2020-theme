@@ -14,9 +14,9 @@
 </head>
 <body class="font-body antialiased">
 
-<nav class="site-navigation flex items-center justify-between flex-wrap p-6" role="navigation">
+<nav class="lg:absolute bg-white bg-opacity-95 lg:mt-2 w-full site-navigation flex items-center justify-between flex-wrap p-2 lg:p-6" role="navigation">
   <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded border-black hover:text-white hover:border-white">
+    <button class="flex items-center px-3 py-2 border rounded border-black">
       <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
@@ -26,10 +26,10 @@
   </div>
 
   <div class="lg:order-last">
-    <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded border-black mt-4 lg:mt-0">Book Now</a>
+    <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded border-black hover:bg-black hover:text-white transition-colors duration-200">Get a quote</a>
   </div>
 
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+  <div class="hidden w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto">
     {% include "menu.twig" with {'items': menu.get_items} %}
   </div>
 </nav>
@@ -37,7 +37,7 @@
 
 
 {% block content %}
-    Sorry, no content
+
 {% endblock %}
 {{ function('wp_footer') }}
 </body>

@@ -4,6 +4,11 @@
 
 @tailwind utilities;
 
+.kc-logo {
+    width: 65px;
+    height: 30px;
+}
+
 .site-navigation .megamenu {
     visibility: hidden;
     opacity: 0;

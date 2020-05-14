@@ -1,5 +1,9 @@
 {% extends "base.twig" %}
 
+{% block content %}
+	{% include ['itemhero.twig'] %}	
+{% endblock %}
+
 {% block contentx %}
 	{% for post in posts %}
 		{% include ['tease.twig'] %}

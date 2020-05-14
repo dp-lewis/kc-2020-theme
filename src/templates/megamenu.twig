@@ -1,16 +1,20 @@
 {% if items %}
-<section class="megamenu flex shadow-md absolute bg-white w-meganav" aria-label="submenu">
-    <header class="hidden"><h2>Services</h2></header>
-    <ul class="p-10 w-3/5">
-        {% for item in items|slice(0,3) %}
-        <li><a href="#" class="mb-2 flex mb-5"><div class="w-1/4 pr-6 pt-1">{{ item.meta('kc2020_menu_icon') }}</div><div><strong class="block">{{ item.title }}</strong> <span class="block text-sm leading-none">{{ item.description }}</span></div></a></li>
-        {% endfor %}
-    </ul>
-    <aside class="p-10 bg-gray-100 w-2/5">
-        {% for item in items|slice(3,10) %}
-            <h3 class="font-bold">{{ item.title }}</h3>
-            {{item.description|pipetolist}}
-        {% endfor %}
-    </aside>
-</section>
+<div class="megamenu lg:absolute">
+    <section class="lg:flex lg:shadow-md bg-white lg:w-meganav" aria-label="submenu">
+        <ul class="lg:p-8 lg:w-3/5">
+            {% for item in items|slice(0,3) %}
+            <li><a href="#" class="flex lg:mb-5"><div class="hidden lg:block lg:w-1/5 pr-6 pt-1">{{ item.meta('kc2020_menu_icon') }}</div><div class="w-4/5"><strong class="block">{{ item.title }}</strong> <span class="hidden lg:block text-sm leading-none">{{ item.description }}</span></div></a></li>
+            {% endfor %}
+        </ul>
+        <aside class="lg:p-8 lg:bg-gray-100 lg:w-2/5">
+            {% for item in items|slice(3,10) %}
+                <h3 class="font-bold mb-1">{{ item.title }}</h3>
+                <div class="mb-2 hidden lg:block">
+                {{item.description|pipetolist}}
+                </div>
+                <a target="{{ item.target }}" href="{{ item.link }}" class="hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded border-black hover:bg-black hover:text-white transition-colors duration-200">Read more</a>
+            {% endfor %}
+        </aside>
+    </section>
+</div>
 {% endif %}
