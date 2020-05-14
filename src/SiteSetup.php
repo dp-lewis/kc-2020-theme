@@ -12,6 +12,7 @@ class SiteSetup extends \Timber\Site
         add_action('init', array($this, 'registerTaxonomies'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
         add_filter('timber/twig', array($this, 'addToTwig'));
+        add_action('widgets_init', array($this, 'registerWidgetAreas'));
     }
 
     public function enqueueStyles()
@@ -101,5 +102,17 @@ class SiteSetup extends \Timber\Site
          }));
          
         return $twig;
+    }
+
+    public function registerWidgetAreas()
+    {
+        register_sidebar(array(
+            'name' => 'Homepage Intro',
+            'id'            => 'area-homepage-intro',
+            'before_widget' => '<div class = "widgetizedArea">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+            ));
     }
 }
