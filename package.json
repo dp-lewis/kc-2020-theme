@@ -24,7 +24,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack && postcss ./src/example.css -o ./build/main.css",
-    "dev": "concurrently \"browser-sync start --proxy 'kombicelebrations:8888' -f '.'\" \"postcss ./src/example.css -o ./build/main.css\""
+    "dev": "concurrently \"browser-sync start --proxy 'kombicelebrations:8888' -f '.'\" \"postcss ./src/example.css -o ./build/main.css\" \"webpack --watch\""
   },
   "repository": {
     "type": "git",
