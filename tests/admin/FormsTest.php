@@ -20,15 +20,14 @@ TEMPLATE,
 
     public function testCreationOfImageUploadField(): void
     {
-        $myField = \Kc2020\Admin\Forms::imageUpload('id', 'name', 'label', 'value');
+        $myField = \Kc2020\Admin\Forms::imageUpload('id', 'name', 'label', 'value', 'url');
 
         $this->assertEquals(
             <<<TEMPLATE
         <p>
-            <img src="" class="image1tag" width="100" />
-            <input class="widefat image1" type="text" name="name" id="id" value="value">
-        </p>
-        <p>
+            <label>Image Upload</label>
+            <img src="url" class="image1tag" width="100" />
+            <input type="hidden" class="widefat image1" name="name" id="id" value="value">
             <button class="image_upload1 button-add-media">Select Image</button>
         </p>
 TEMPLATE,
