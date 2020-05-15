@@ -6,19 +6,43 @@ class SiteSetup extends \Timber\Site
     public function __construct()
     {
         parent::__construct();
+
         add_action('after_setup_theme', array($this, 'themeSupports'));
         add_filter('timber/context', array($this, 'addToContext'));
         add_action('init', array($this, 'registerPostTypes'));
         add_action('init', array($this, 'registerTaxonomies'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
+        add_action('wp_enqueue_scripts', array($this, 'deregisterScripts'));
         add_filter('timber/twig', array($this, 'addToTwig'));
         add_action('widgets_init', array($this, 'registerWidgetAreas'));
+
+        // Disable FE assets
+        define('NGG_SKIP_LOAD_SCRIPTS', true);
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('admin_print_scripts', 'print_emoji_detection_script');
+        remove_action('wp_print_styles', 'print_emoji_styles');
+        // remove_action( 'admin_print_styles', 'print_emoji_styles' );
+        add_action('wp_footer', array($this, 'deregisterFooterScripts'));
+    }
+
+    public function deregisterScripts()
+    {
+        if (!is_admin()) {
+            wp_deregister_script('jquery');
+        }
+    }
+
+
+    public function deregisterFooterScripts()
+    {
+        wp_dequeue_script('wp-embed');
     }
 
     public function enqueueStyles()
     {
         wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
         wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css');
+        wp_dequeue_style('wp-block-library');
     }
 
     public function registerPostTypes()

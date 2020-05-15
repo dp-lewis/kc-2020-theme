@@ -6,7 +6,9 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "browser-sync": "^2.26.7",

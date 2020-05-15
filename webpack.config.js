@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/example.js',
+    app: './src/app.js',
     admin: './src/admin.js'
   },
   output: {
