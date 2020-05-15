@@ -27,7 +27,7 @@ class ItemHero extends \WP_Widget
         $imageUrl = wp_get_attachment_url($instance['photo']);
 
         if (!empty($title)) {
-            \Timber::render( 'itemhero.twig', array(
+            \Timber::render('itemhero.twig', array(
                 'title' => $title,
                 'subtitle' => $subtitle,
                 'url' => $url,
@@ -48,7 +48,7 @@ class ItemHero extends \WP_Widget
 
         echo Forms::text($this->get_field_id('title'), $this->get_field_name('title'), 'Title', $title);
         echo Forms::text($this->get_field_id('subtitle'), $this->get_field_name('subtitle'), 'Subtitle', $subtitle);
-        echo Forms::text($this->get_field_id('linktitle'), $this->get_field_name('linktitle'), 'Link title', $linktitle);
+        echo Forms::text($this->get_field_id('linktitle'), $this->get_field_name('linktitle'), 'Link', $linktitle);
         echo Forms::text($this->get_field_id('url'), $this->get_field_name('url'), 'Link URL', $url);
         echo Forms::imageUpload($this->get_field_id('photo'), $this->get_field_name('photo'), '', $photo, $imageUrl);
     }
