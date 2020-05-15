@@ -3,17 +3,14 @@ import Vue from 'vue/dist/vue.js';
 Vue.component('kc-nav', {
     data() {
       return {
-        message: 'hello'
+        isHidden: true
       }
     },
     methods: {
         toggleNav() {
-            console.log('hi there');
+            this.isHidden = !this.isHidden;
         }
-    },
-    mounted() {
-        console.log('boo');
-    } 
+    }
 });
 
 const app = new Vue({
