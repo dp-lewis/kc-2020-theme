@@ -1,3 +1,10 @@
-	{% for post in posts %}
-		{% include ['tease.twig'] %}
-	{% endfor %}
+<section class="p-4">
+	<h1 class="text-xl text-center mb-2">{{ title }}</h1>
+	<div class="flex overflow-x-auto overflow-y-hidden scrolling-touch scroll-snap-both-mandatory">
+		{% for post in posts %}
+			<div class="w-2/3 lg:w-1/6 flex-grow-0 flex-shrink-0 pr-2"> 
+			{% include ['tease.twig'] %}
+			</div>
+		{% endfor %}
+	</div>
+</section>
