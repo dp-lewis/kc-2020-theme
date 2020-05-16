@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './src/**/*.twig',
+    './src/**/*.svg'
+  ],
   theme: {
     fontFamily: {
       body: ['Raleway', 'sans-serif']
