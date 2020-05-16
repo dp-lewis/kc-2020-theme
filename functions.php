@@ -14,4 +14,5 @@ new Kc2020\AdminMenuSetup();
 
 add_action('widgets_init', function () {
     register_widget('\Kc2020\Widgets\ItemHero');
+    register_widget('\Kc2020\Widgets\ContentListing');
 });

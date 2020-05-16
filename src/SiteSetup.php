@@ -27,7 +27,7 @@ class SiteSetup extends \Timber\Site
 
     public function deregisterScripts()
     {
-        if (!is_admin()) {
+        if (!is_admin() && !is_customize_preview()) {
             wp_deregister_script('jquery');
         }
     }
@@ -62,21 +62,6 @@ class SiteSetup extends \Timber\Site
                 'supports' => array( 'title', 'editor', 'custom-fields' ),
             )
         );
-
-        register_post_type(
-            'testimonials',
-            array(
-                'labels' => array(
-                    'name' => __('Testimonials'),
-                    'singular_name' => __('Testimonial')
-                ),
-                'public' => true,
-                'has_archive' => true,
-                'rewrite' => array('slug' => 'testimonial'),
-                'show_in_rest' => true,
-                'supports' => array( 'title', 'editor', 'custom-fields' ),
-            )
-        );
     }
 
     public function registerTaxonomies()
@@ -94,6 +79,7 @@ class SiteSetup extends \Timber\Site
         add_theme_support('automatic-feed-links');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
+
         add_theme_support(
             'html5',
             array(

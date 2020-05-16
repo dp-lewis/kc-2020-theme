@@ -1,13 +1,6 @@
 {% extends "base.twig" %}
 
-
-
 {% block content %}
 	{{homepageintro}}
 {% endblock %}
 
-{% block contentx %}
-	{% for post in posts %}
-		{% include ['tease.twig'] %}
-	{% endfor %}
-{% endblock %}

@@ -32,6 +32,7 @@ class ItemHero extends \WP_Widget
                 'subtitle' => $subtitle,
                 'url' => $url,
                 'imageUrl' => $imageUrl,
+                'imageID' => $instance['photo'],
                 'linktitle' => $linktitle
             ));
         }
