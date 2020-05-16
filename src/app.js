@@ -3,14 +3,18 @@ import Vue from 'vue/dist/vue.js';
 Vue.component('kc-nav', {
     data() {
       return {
-        isHidden: true
+        isNavShown: false,
+        isQuoteShown: false
       }
     },
     methods: {
         toggleNav() {
-            this.isHidden = !this.isHidden;
+            this.isNavShown = !this.isNavShown;
+        },
+        toggleQuote() {
+          this.isQuoteShown = !this.isQuoteShown;
         }
-    }
+      }
 });
 
 const app = new Vue({

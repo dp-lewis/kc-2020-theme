@@ -2,7 +2,7 @@
 	<ul class="text-sm lg:flex-grow">
 	{% for item in items %}
 		<li class="block mt-4 lg:inline-block lg:mt-0 hover:text-black mr-4">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			<a target="{{ item.target }}" href="{{ item.link }}" class="text-lg">{{ item.title }}</a>
 			{% include "megamenu.twig" with {'items': item.children} %}
 		</li>
 	{% endfor %}
