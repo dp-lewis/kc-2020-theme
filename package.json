@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack && postcss ./src/example.css -o ./build/main.css",
+    "build": "env NODE_ENV=production postcss ./src/example.css -o ./build/main.css && webpack",
     "dev": "concurrently \"browser-sync start --proxy 'kombicelebrations:8888' -f '.'\" \"postcss ./src/example.css -o ./build/main.css --watch\" \"webpack --watch\""
   },
   "repository": {
