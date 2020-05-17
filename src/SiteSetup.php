@@ -40,7 +40,7 @@ class SiteSetup extends \Timber\Site
 
     public function enqueueStyles()
     {
-        wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
+        wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:ital@300;400&display=swap');
         wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css');
         wp_enqueue_script('main-script', get_template_directory_uri() . '/build/app.js', [], false, true);
         wp_dequeue_style('wp-block-library');

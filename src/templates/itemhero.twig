@@ -1,7 +1,7 @@
-<article class="flex bg-black bg-cover bg-center lg:bg-top md:justify-end" style="background-image: url({{ Image(imageID).src }})">
-    <div class="w-full md:w-1/2 bg-white bg-opacity-85 flex flex-col justify-center items-center text-center p-6 mt-64 md:m-0 md:pt-28 lg:pt-40 md:pb-16">
-        <h1 class="text-3xl md:text-5xl lg:text-6xl leading-none mb-2">{{ title }}</h1>
-        <p class="text-1xl md:text-2xl leading-none lg:text-3xl mb-3 md:mb-6">{{ subtitle }}</p>
-        <a href="{{ url }}" class="font-bold bg-kombiblue hover:bg-black text-white px-5 py-3 leading-none rounded transition-colors duration-200">{{ linktitle }}</a>
+<article class="flex bg-black bg-cover bg-center lg:bg-left md:justify-end" style="background-image: url({{ Image(imageID).src }})">
+    <div class="angle w-full md:w-1/3 bg-white bg-blur bg-opacity-85 flex flex-col justify-center items-center text-center p-8 md:pt-24 md:pb-16">
+        <h1 class="text-3xl lg:text-4xl leading-none mb-4">{{ title }}</h1>
+        <p class="text-xl leading-none mb-3 md:mb-6">{{ subtitle }}</p>
+        <a href="{{ url }}" class="font-normal bg-black text-white px-5 py-3 leading-none rounded">{{ linktitle }}</a>
     </div>
 </article>

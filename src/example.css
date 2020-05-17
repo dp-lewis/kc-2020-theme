@@ -65,3 +65,11 @@
 .scroll-snap-both-mandatory {
     scroll-snap-type: both mandatory;
 }
+
+.angle {
+    clip-path: polygon(2rem 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.bg-blur {
+    backdrop-filter: blur(4px);
+}

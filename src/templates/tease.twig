@@ -1,8 +1,8 @@
 <article>
-<a href="{{post.link}}">
+<a href="{{post.link}}" class="block hover:opacity-75 transition-opacity ease-in-out duration-500">
 	{% if post.get_thumbnail %}
-		<img src="{{post.thumbnail|resize(300, 190)}}" class="w-full" />
+		<img src="{{post.thumbnail|resize(300, 190)}}" class="w-full mb-3" />
 	{% endif %}
-	<h2 class="h2 leading-none pt-2">{{post.title}}</h2>
+	<h2 class="leading-none text-sm">{{post.title}}</h2>
 	</a>
 </article>
