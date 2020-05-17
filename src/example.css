@@ -14,7 +14,6 @@
         visibility: hidden;
         opacity: 0;
         display: none;
-        transition: opacity 3s linear;
     }
     
     .site-navigation li:hover > .megamenu,
@@ -24,8 +23,14 @@
         visibility: visible;
         opacity: 1;
         display: flex;
+        /* animation: fadein .4s; */
     }
 }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
 #crmWebToEntityForm {
     width: 100% !important;

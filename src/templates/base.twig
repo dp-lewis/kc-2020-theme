@@ -14,14 +14,14 @@
 </head>
 <body class="font-body font-light antialiased">
 <div id="site-heading"><div is="kc-nav" inline-template>
-<nav class="bg-white bg-opacity-95 w-full site-navigation flex items-center justify-between flex-wrap p-4 lg:p-6" role="navigation">
-  <div class="block lg:hidden">
+<nav class="bg-white bg-opacity-95 w-full site-navigation flex items-center justify-between flex-wrap" role="navigation">
+  <div class="block lg:hidden p-4">
     <button v-on:click="toggleNav()" class="flex items-center px-3 py-2 border rounded border-black">
       {% include "svg/menu-open.svg" %}
     </button>
   </div>
 
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
+  <div class="flex items-center text-white p-4 lg:mr-4">
     {% include "svg/logo.svg" %}
   </div>
 
