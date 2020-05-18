@@ -1,0 +1,20 @@
+{% extends "contentlisting.twig" %}
+
+{% block content %}
+
+{% if menu %}
+	<div class="flex">
+	{% for item in menu.get_items %}
+		<article class="w-1/3 p-4 text-center">
+			<a target="{{ item.target }}" href="{{ item.link }}">
+            <div class="inline-block">
+            {{ item.meta('kc2020_menu_icon')|replace({'<svg': '<svg class="w-32 h-32"'}) }}
+            </div>
+            <div>{{ item.title }}</div>
+            </a>
+		</article>
+	{% endfor %}
+	</div>
+{% endif %}
+
+{% endblock %}
