@@ -33,7 +33,9 @@ class ContentListing extends \WP_Widget
             );
             $posts = new \Timber\PostQuery($args);
 
-            \Timber::render(['contentlisting-' . $template . '.twig', 'contentlisting.twig'], array(
+            $templateFiles = ['contentlisting-' . $template . '.twig', 'contentlisting.twig'];
+
+            \Timber::render($templateFiles, array(
                 'title' => $title,
                 'posts' => $posts,
                 'cssclasses' => $cssclasses,
@@ -51,13 +53,12 @@ class ContentListing extends \WP_Widget
         $total = esc_attr((isset($instance['total'])) ? $instance['total'] : 1);
         $posttype = esc_attr((isset($instance['posttype'])) ? $instance['posttype'] : 'post');
 
-        echo Forms::text($this->get_field_id('cssclasses'), $this->get_field_name('cssclasses'), 'CSS Classes', $cssclasses);        
+        echo Forms::text($this->get_field_id('cssclasses'), $this->get_field_name('cssclasses'), 'CSS', $cssclasses);
         echo Forms::text($this->get_field_id('template'), $this->get_field_name('template'), 'Template', $template);
         echo Forms::text($this->get_field_id('title'), $this->get_field_name('title'), 'Title', $title);
         echo Forms::text($this->get_field_id('posttype'), $this->get_field_name('posttype'), 'Post types', $posttype);
         echo Forms::text($this->get_field_id('categories'), $this->get_field_name('categories'), 'Cat', $categories);
         echo Forms::text($this->get_field_id('total'), $this->get_field_name('total'), 'Total posts', $total);
-
     }
 
     public function update($new_instance, $old_instance)

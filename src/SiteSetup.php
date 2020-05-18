@@ -78,12 +78,12 @@ class SiteSetup extends \Timber\Site
                 'supports' => array( 'title', 'thumbnail' ),
                 'taxonomies'  => array( 'category' ),
             )
-        );        
+        );
     }
 
     public function registerTaxonomies()
     {
-        register_taxonomy_for_object_type( 'category', 'jetpack-testimonial' );
+        register_taxonomy_for_object_type('category', 'jetpack-testimonial');
     }
 
     public function addToContext($context)
