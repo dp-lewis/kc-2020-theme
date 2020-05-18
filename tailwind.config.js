@@ -14,7 +14,10 @@ module.exports = {
           dark: '005166'
         },
         kombigrey: {
-          default: '#585858'
+          default: '#EBF0F2'
+        },
+        kombiblack: {
+          default: '#00161C'
         }
       },
       spacing: {
