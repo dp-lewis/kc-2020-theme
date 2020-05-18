@@ -1,7 +1,7 @@
 <blockquote class="flex flex-col justify-between items-center p-4" itemprop="review" itemscope itemtype="http://schema.org/Review">
 	<p itemprop="reviewBody" class="text-center mb-2 italic">{{post.post_excerpt}}</p>
 	<footer  class="flex items-center">
-		<img src="{{post.thumbnail|resize(128, 128)}}" loading="lazy" class="w-10 h-10 rounded-full mr-2" />
+		<img src="{{post.thumbnail|resize(128, 128)}}" alt="{{ post.thumbnail.alt }}" loading="lazy" class="w-10 h-10 rounded-full mr-2" />
 		<div class="text-sm">
 			<cite itemprop="author" class="block text-sm">{{post.title}}</cite>
 			<time itemprop="datePublished" class="block">{{ post.date("F Y") }}</time>
