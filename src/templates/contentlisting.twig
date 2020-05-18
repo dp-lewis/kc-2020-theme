@@ -1,10 +1,14 @@
-<section class="p-6 pt-8 pb-0">
-	<h1 class="text-2xl text-center mb-4">{{ title }}</h1>
+<section class="p-6 {{ cssclasses }}">
+	<h1 class="text-xl text-center leading-none mb-4">{{ title }}</h1>
+
+	{% block content %}
 	<div class="flex overflow-x-auto overflow-y-hidden scrolling-touch scroll-snap-both-mandatory">
 		{% for post in posts %}
-			<div class="w-2/3 md:w-1/5 lg:w-1/6 flex-grow-0 flex-shrink-0 pr-6"> 
-			{% include ['tease.twig'] %}
+			<div class="w-2/3 md:w-1/{{ min([totalPosts, 5]) }} lg:w-1/{{ min([totalPosts, 6]) }} flex-grow-0 flex-shrink-0 pr-6"> 
+			{% include ['listview-' ~ post.post_type ~ '.twig', 'listview.twig'] %}
 			</div>
 		{% endfor %}
 	</div>
+	{% endblock %}
+
 </section>

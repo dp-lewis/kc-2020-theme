@@ -40,7 +40,7 @@ class SiteSetup extends \Timber\Site
 
     public function enqueueStyles()
     {
-        wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:ital@300;400&display=swap');
+        wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
         wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css');
         wp_enqueue_script('main-script', get_template_directory_uri() . '/build/app.js', [], false, true);
         wp_dequeue_style('wp-block-library');
@@ -49,7 +49,7 @@ class SiteSetup extends \Timber\Site
     public function registerPostTypes()
     {
         register_post_type(
-            'locations',
+            'location',
             array(
                 'labels' => array(
                     'name' => __('Locations'),
@@ -62,10 +62,28 @@ class SiteSetup extends \Timber\Site
                 'supports' => array( 'title', 'editor', 'custom-fields' ),
             )
         );
+
+
+        register_post_type(
+            'promotion',
+            array(
+                'labels' => array(
+                    'name' => __('Promotions'),
+                    'singular_name' => __('Promotion')
+                ),
+                'public' => true,
+                'has_archive' => true,
+                'rewrite' => array('slug' => 'promotions'),
+                'show_in_rest' => true,
+                'supports' => array( 'title', 'thumbnail' ),
+                'taxonomies'  => array( 'category' ),
+            )
+        );        
     }
 
     public function registerTaxonomies()
     {
+        register_taxonomy_for_object_type( 'category', 'jetpack-testimonial' );
     }
 
     public function addToContext($context)

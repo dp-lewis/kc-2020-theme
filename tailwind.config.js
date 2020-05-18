@@ -18,7 +18,8 @@ module.exports = {
         }
       },
       spacing: {
-       meganav: '40rem'
+       meganav: '40rem',
+       '16x9': '56.25%'
       },
       opacity: {
         '85': '0.85',
