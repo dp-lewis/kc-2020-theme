@@ -89,6 +89,7 @@ class SiteSetup extends \Timber\Site
     public function addToContext($context)
     {
         $context['menu']  = new \Timber\Menu('Site Navigation');
+        $context['menufooter']  = new \Timber\Menu('Site Navigation Footer');
         return $context;
     }
 

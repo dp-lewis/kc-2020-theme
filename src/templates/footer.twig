@@ -1,0 +1,21 @@
+<footer class="bg-kombiblack text-white p-8 w-full">
+  <div class="flex w-full">
+    {% if menufooter %}
+        {% for item in items %}
+        <div class="pr-4">
+            <div class="text-sm mb-3">{{ item.title }}</div>
+            <ul class="text-xs mb-6">
+                {% for child in item.children %}
+                <li class="mr-2">
+                    <a href="{{ child.link }}">{{ child.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    {% endif %}
+  </div>
+  <div class="text-sm">
+    &copy; 2020 Kombi Celebrations
+  </div>
+</footer>
