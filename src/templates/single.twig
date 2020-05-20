@@ -5,8 +5,8 @@
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
 			<section class="article-content p-10">
-				<h1 class="text-3xl">{{ post.title }}</h1>
-				<time datetime="{{ post.date|date('Y-m-d H:i:s') }}" class="block mb-2">{{ post.date }}</time>
+				<h1 class="text-3xl leading-tight mb-3">{{ post.title }}</h1>
+				<time datetime="{{ post.date|date('Y-m-d H:i:s') }}" class="block mb-2 text-sm">{{ post.date }}</time>
 				<div class="article-body">
 					{{post.content}}
 				</div>
