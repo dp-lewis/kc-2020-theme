@@ -1,15 +1,15 @@
 {% if items %}
-<div class="megamenu lg:absolute">
-    <section class="lg:flex lg:shadow-md  lg:w-meganav" aria-label="submenu">
-        <ul class="lg:p-8 lg:w-3/5 bg-white bg-blur bg-opacity-90">
+<div v-bind:class="{ hidden: !isSubnavShown[{{ loop.index }}] }" class="megamenu md:absolute">
+    <section class="md:flex md:shadow-md lg:w-meganav" aria-label="submenu">
+        <ul class="bg-white bg-blur bg-opacity-90 md:p-8 md:w-3/5">
             {% for item in items|slice(0,3) %}
-            <li><a href="#" class="flex mb-2 lg:mb-5"><div class="lg:block w-1/5 pr-6 pt-1">{{ item.meta('kc2020_menu_icon') }}</div><div class="w-4/5"><strong class="block">{{ item.title }}</strong> <span class="block text-sm leading-none">{{ item.description }}</span></div></a></li>
+            <li><a href="#" class="flex mb-2 md:mb-5"><div class="hidden md:block w-1/5 pr-6 pt-1">{{ item.meta('kc2020_menu_icon') }}</div><div class="w-4/5"><strong class="block">{{ item.title }}</strong> <span class="hidden md:block text-sm leading-none">{{ item.description }}</span></div></a></li>
             {% endfor %}
         </ul>
         <aside class="lg:p-8 lg:bg-gray-100 bg-blur lg:bg-opacity-90 lg:w-2/5">
             {% for item in items|slice(3,10) %}
                 <h3 class="font-normal mb-1">{{ item.title }}</h3>
-                <div class="mb-2 text-sm lg:block">
+                <div class="hidden mb-2 text-sm lg:block">
                 {{item.description|pipetolist}}
                 </div>
                 <a target="{{ item.target }}" href="{{ item.link }}" class="hidden font-normal lg:inline-block text-sm px-4 py-2 leading-none border rounded border-black hover:bg-black hover:text-white transition-colors duration-200">Read more</a>

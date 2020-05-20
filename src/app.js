@@ -4,15 +4,15 @@ Vue.component('kc-nav', {
     data() {
       return {
         isNavShown: false,
-        isQuoteShown: false
+        isSubnavShown: []
       }
     },
     methods: {
         toggleNav() {
             this.isNavShown = !this.isNavShown;
         },
-        toggleQuote() {
-          this.isQuoteShown = !this.isQuoteShown;
+        toggleSubNav(index) {
+          Vue.set(this.isSubnavShown, index, !this.isSubnavShown[index]);
         }
       }
 });
