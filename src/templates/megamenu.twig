@@ -1,5 +1,5 @@
 {% if items %}
-<div v-bind:class="{ hidden: !isSubnavShown[{{ loop.index }}] }" class="megamenu md:absolute">
+<div v-bind:class="{ hidden: !isSubnavShown[{{ loop.index }}] }" class="md:block megamenu md:absolute">
     <section class="md:flex md:shadow-md lg:w-meganav" aria-label="submenu">
         <ul class="bg-white bg-blur bg-opacity-90 md:p-8 md:w-3/5">
             {% for item in items|slice(0,3) %}
