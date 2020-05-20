@@ -9,6 +9,36 @@
     height: 30px;
 }
 
+@media (max-width: 767px) {
+    .site-navigation__menu {
+        left: 100%;
+    }
+
+    .site-navigation__menu.show {
+        left: 0;
+    }
+
+    .site-navigation__menu:before {
+        transition: opacity linear .2s;
+        content: "";
+        opacity: 0;
+        @apply bg-black bg-opacity-50 block fixed top-0 left-0 bottom-0 right-0;
+    }
+
+    .site-navigation__menu.show:before {
+        opacity: 1;
+    }
+
+    .site-navigation__menulisting {
+        transition: transform linear .2s;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    .site-navigation__menu.show .site-navigation__menulisting {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 @media (min-width: 1024px) {
     .site-navigation .megamenu {
         visibility: hidden;
