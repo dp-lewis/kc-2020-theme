@@ -1,14 +1,14 @@
 {% if menu %}
   <div v-bind:class="{ show: isNavShown }" v-on:click.self="toggleNav()" class="site-navigation__menu w-full h-screen  fixed z-10 left-0 top-0 md:bg-transparent md:p-0 md:h-auto md:static md:flex md:flex-row md:items-center md:w-auto">
     <div class="site-navigation__menulisting w-2/3 fixed top-0 right-0 bottom-0 bg-white p-8 md:p-0 md:static md:w-auto">
-	<ul class="text-sm md:flex-grow">
-	{% for item in items %}
-		<li class="block md:inline-block md:mr-4 md:mt-0">
-			<a v-on:click="toggleSubNav({{ loop.index }})" target="{{ item.target }}" href="{{ item.link }}" class="font-normal md:font-light block py-1 md:text-lg md:pt-6 md:pb-6">{{ item.title }}</a>
-			{% include "megamenu.twig" with {'items': item.children} %}
-		</li>
-	{% endfor %}
-	</ul>
+		<ul class="text-sm md:flex-grow">
+		{% for item in items %}
+			<li class="block md:inline-block md:mr-4 md:mt-0">
+				<a v-on:click="toggleSubNav({{ loop.index }})" target="{{ item.target }}" href="{{ item.link }}" class="font-normal md:font-light block py-1 md:text-lg md:pt-6 md:pb-6">{{ item.title }}</a>
+				{% include "megamenu.twig" with {'items': item.children} %}
+			</li>
+		{% endfor %}
+		</ul>
     </div>
   </div>
   {% endif %}

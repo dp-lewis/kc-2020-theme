@@ -22,7 +22,7 @@
         transition: opacity linear .2s;
         content: "";
         opacity: 0;
-        @apply bg-black bg-opacity-50 block fixed top-0 left-0 bottom-0 right-0;
+        @apply bg-black bg-opacity-50 block absolute top-0 left-0 bottom-0 right-0;
     }
 
     .site-navigation__menu.show:before {
@@ -39,7 +39,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .site-navigation .megamenu {
         visibility: hidden;
         opacity: 0;
