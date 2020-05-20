@@ -24,11 +24,11 @@ TEMPLATE,
 
         $this->assertEquals(
             <<<TEMPLATE
-        <p>
-            <label>Image Upload</label>
-            <img src="url" class="image1tag" width="100" />
-            <input type="hidden" class="widefat image1" name="name" id="id" value="value">
-            <button class="image_upload1 button-add-media">Select Image</button>
+        <p class="js-imageuploader">
+            <label>label</label>
+            <img src="url" width="100" style="display: block;" />
+            <input type="hidden" class="widefat" name="name" id="id" value="value">
+            <button type="button" class="button-add-media">Select Image</button>
         </p>
 TEMPLATE,
             $myField
