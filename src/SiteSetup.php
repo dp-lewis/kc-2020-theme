@@ -49,7 +49,7 @@ class SiteSetup extends \Timber\Site
         $jsPath = get_stylesheet_directory() . '/build/app.js';
         wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
         wp_enqueue_style('main-styles', $cssUrl, [], filemtime($cssPath));
-        wp_enqueue_script('main-script', $jsUrl, [], filemtime($jsPath));
+        wp_enqueue_script('main-script', $jsUrl, [], filemtime($jsPath), true);
         wp_dequeue_style('wp-block-library');
     }
 
